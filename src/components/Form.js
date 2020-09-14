@@ -5,19 +5,28 @@ import axios from 'axios';
 
 const Form = (props) => {
 
-    const defaultState = {
-        name: "",
-        pizzaSize: "",
-        pizzaSauce: "",
-        pepperoni: false,
-        onions: false,
-        sausage: false,
-        olives: false,
-        instructions:"",
-    };
+   
 
-    const [formState, setFormState] = useState(defaultState);
-    const [errors, setErrors] = useState({ ...defaultState });
+    const [formState, setFormState] = useState({
+                name: "",
+                pizzaSize: "",
+                pizzaSauce: "",
+                pepperoni: false,
+                onions: false,
+                sausage: false,
+                olives: false,
+                instructions:"",
+    });
+    const [errors, setErrors] = useState({ 
+                name: "",
+                pizzaSize: "",
+                pizzaSauce: "",
+                pepperoni: false,
+                onions: false,
+                sausage: false,
+                olives: false,
+                instructions:"",
+     });
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
     const [newForm, setNewForm] = React.useState([]);
@@ -91,7 +100,7 @@ const Form = (props) => {
     return (
         <form onSubmit={formSubmit} className="formDiv">
             <h3>Build Your Own Pizza:</h3>
-            <label htmlForm="name">
+            <label htmlform="name">
                 <input
                     id="name"
                     type="text"
@@ -104,7 +113,7 @@ const Form = (props) => {
                 {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
             </label>
             <br />
-            <label htmlFor="pizzaSize">
+            <label htmlform="pizzaSize">
                 Choice Of Size
                 <select name="pizzaSize" onChange={inputChange}>
                     <option value="personal">Personal</option>
@@ -117,7 +126,7 @@ const Form = (props) => {
 
             
 
-            <label htmlForm="pizzaSauce">
+            <label htmlform="pizzaSauce">
                 Choice of Sauce
                 <select name="pizzaSauce" onChange={inputChange}>
                     <option value="original">Original Red</option>
@@ -131,7 +140,7 @@ const Form = (props) => {
 
             <div className="toppingDiv">
                 <h3>Add Toppings</h3>
-                <label htmlForm="pepperoni">
+                <label htmlFor="pepperoni">
                 Pepperoni
                 <input onChange={inputChange} 
                     name="pepperoni"
@@ -139,7 +148,7 @@ const Form = (props) => {
                     value="pepperoni"
                 />
             </label>
-            <label htmlForm="sausage">
+            <label htmlFor="sausage">
                 sausage
                 <input onChange={inputChange} 
                     name="sausage"

@@ -16,8 +16,9 @@ const App = () => {
       <Nav />
     <div>
       <Route exact path="/"><h1>Lambda Eats</h1></Route>
-      <Route path="/components/Form"><Form order={order} setOrder={setOrder}/></Route>
+      <Route path="/components/Form">{order.map((order, index) => (<p>Name: {order.name} Size: {order.pizzaSize} Sauce: {order.pizzaSauce}</p>))}<Form order={order} setOrder={setOrder}/></Route>
       <Route path="/components/Pizza"><Pizza order={order} /></Route>
+      
     </div>
     </Router>
   );
