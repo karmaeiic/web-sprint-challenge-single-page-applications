@@ -100,7 +100,7 @@ const Form = (props) => {
     return (
         <form onSubmit={formSubmit} className="formDiv">
             <h3>Build Your Own Pizza:</h3>
-            <label htmlform="name">
+            <label htmlFor="name">
                 <input
                     id="name"
                     type="text"
@@ -113,7 +113,7 @@ const Form = (props) => {
                 {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
             </label>
             <br />
-            <label htmlform="pizzaSize">
+            <label htmlFor="pizzaSize">
                 Choice Of Size
                 <select name="pizzaSize" onChange={inputChange}>
                     <option value="personal">Personal</option>
@@ -126,7 +126,7 @@ const Form = (props) => {
 
             
 
-            <label htmlform="pizzaSauce">
+            <label htmlFor="pizzaSauce">
                 Choice of Sauce
                 <select name="pizzaSauce" onChange={inputChange}>
                     <option value="original">Original Red</option>
